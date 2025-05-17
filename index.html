@@ -3,70 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的主页 </title>
+    <title>现代简约设计</title>
     <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
             line-height: 1.6;
-            max-width: 800px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background-color: #f9f9f9;
+            padding: 2rem 0;
         }
+        
         header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
+        
         h1 {
-            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
-        .intro {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 20px 0;
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+            font-weight: 600;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 0.9em;
-            color: #7f8c8d;
+        
+        p {
+            margin-bottom: 1rem;
         }
-        a {
-            color: #3498db;
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>欢迎来到我的项目</h1>
-        <p>这是一个托管在GitHub Pages上的简单网页</p>
+        <div class="container">
+            <h1>现代简约设计</h1>
+            <p>打造优雅、高效的网页体验</p>
+            <div class="header-buttons">
+                <a href="#features" class="btn">了解更多</a>
+                <a href="#contact" class="btn btn-outline">联系我们</a>
+            </div>
+        </div>
     </header>
-
-    <div class="intro">
-        <h2>关于我</h2>
-        <p>你好！。这个页面是我学习Web开发的起点。</p>
-        <p>我正在学习HTML和CSS，未来可能会添加更多内容。</p>
-    </div>
-
-    <div class="intro">
-        <h2>项目示例</h2>
-        <ul>
-            <li><a href="#">项目1：个人博客</a></li>
-            <li><a href="#">项目2：天气应用</a></li>
-            <li><a href="#">项目3：待办事项列表</a></li>
-        </ul>
-    </div>
-
-    <footer>
-        <p>© 2023 我的GitHub主页 | 通过 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> 托管</p>
+    
+    <main class="container">
+        <section id="about">
+            <h2>关于我们</h2>
+            <p>我们致力于创造美观、实用且用户友好的网页设计。通过结合最新的设计趋势和技术创新，我们帮助客户在数字世界中脱颖而出。</p>
+            <p>我们的设计理念是"少即是多"，专注于简洁的布局、有意义的空白和直观的用户体验。</p>
+        </section>
+        
+        <section id="features">
+            <h2>我们的优势</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>响应式设计</h3>
+                    <p>我们的设计在所有设备上都能完美呈现，从手机到桌面电脑，确保最佳的用户体验。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>极速性能</h3>
+                    <p>优化每一行代码和每一张图片，确保您的网站加载迅速，提高用户满意度和SEO排名。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>精美设计</h3>
+                    <p>由专业设计师打造的视觉体验，结合色彩心理学和用户体验原则，创造难忘的第一印象。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials">
+            <h2>客户评价</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="客户头像">
+                    <div>
+                        <p class="testimonial-text">"与这个团队合作是一次愉快的经历。他们理解我们的需求并超越了我们的期望。"</p>
+                        <p class="testimonial-author">- 张经理，ABC公司</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="客户头像">
+                    <div>
+                        <p class="testimonial-text">"我们的网站重新设计后，转化率提高了40%。设计不仅美观，而且非常实用。"</p>
+                        <p class="testimonial-author">- 李总监，XYZ科技</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="container">
+            <h2>联系我们</h2>
+            <p>准备好开始您的项目了吗？我们随时为您提供帮助。</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2023 现代简约设计. 保留所有权利.</p>
+        </div>
     </footer>
 </body>
 </html>
